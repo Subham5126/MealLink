@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DONATE NOW!</title>
+    <link rel="icon" type="image/png" href="foodbridge_logo.png">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="foodbridge_logo.png">
+        <nav class="navigation">
+            <ul class="nav_links">
+                <li class="home"><a href="index.html">Home</a></li>
+                <li class="about_us"><a href="about_us.html" >About Us</a></li>
+                <li><a href="home.html">Donate</a></li>
+                <li><a href="home.html">Nearby Donations</a></li>
+                <li><a href="contact_us.html">Contact Us </a></li>
+                
+
+            </ul>
+        </nav>
+      
+
+    </header>
+    <div class="hero_section">
+        <div class="form_food">
+        <h1>Donate Now</h1>
+    <form action="/donate" method="POST">
+        <label for="donor_name">Name:</label>
+        <input type="text" id="donor_name" name="donor_name" required><br><br>
+
+        <label for="donor_phone">Phone:</label>
+        <input type="text" id="donor_phone" name="donor_phone" required><br><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required><br><br>
+
+        <label for="food_details">Food Details:</label>
+        <textarea id="food_details" name="food_details" required></textarea><br><br>
+
+        <button type="submit">Donate</button>
+    </form>
+    </div>
+        
+
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>Foodbridge</h2>
+            <p>Bridging the gap between excess and need. Your small contribution can make a big difference.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2025 Foodbridge. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+<script>
+    document.querySelector('form').addEventListener('submit', async function(e) {
+        e.preventDefault();  // Prevent the form from submitting the traditional way
+        
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch('/donate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert('Donation added successfully!');
+                this.reset();  // Reset the form fields
+            } else {
+                alert('Failed to add donation. Please try again.');
+            }
+        } catch (error) {
+            alert('Error submitting donation: ' + error.message);
+        }
+    });
+</script>
+
+</html>

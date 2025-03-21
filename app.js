@@ -6,6 +6,8 @@ const PORT = 3000;
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(__dirname));
+
 
 // MySQL Connection
 const db = mysql.createConnection({
@@ -22,7 +24,7 @@ db.connect((err) => {
 
 // Home Route - Serve HTML File
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/donate.html');
 });
 
 // Donate Now - Save Donation to Database
@@ -34,10 +36,14 @@ app.post('/donate', (req, res) => {
         VALUES (?, ?, ?, ?)
     `;
     db.query(sql, [donor_name, donor_phone, location, food_details], (err, result) => {
-        if (err) throw err;
-        res.send('Donation added successfully!');
+        if (err) {
+            res.status(500).json({ message: 'Failed to add donation' });
+            return;
+        }
+        res.status(200).json({ message: 'Donation added successfully!' });
     });
 });
+
 
 // Nearby Donations - Retrieve Donations
 app.get('/nearby', (req, res) => {
