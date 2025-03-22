@@ -1,8 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const app = express();
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = 3000;
 
 // Middleware
 app.use(express.json());
@@ -14,7 +13,7 @@ app.use(express.static(__dirname));
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '#Tanmay@4597',
+    password: 'your_password', //add your own password
     database: 'foodbridge'
 });
 
@@ -76,4 +75,4 @@ app.get('/api/nearby_donations', (req, res) => {
     });
 });
 
-require('dotenv').config();
+
