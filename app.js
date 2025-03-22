@@ -59,3 +59,19 @@ app.get('/nearby', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
+
+app.get('/api/nearby_donations', (req, res) => {
+    const query = 'SELECT donor_name, location, food_details, donor_phone FROM donations';
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Error fetching donations:', err.message);
+            res.status(500).json({ error: 'Database error' });
+        } else if (results.length === 0) {
+            console.log('No donations found');
+            res.json([]);
+        } else {
+            res.json(results);
+        }
+    });
+});
+

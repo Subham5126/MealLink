@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Donations</title>
+    <link rel="icon" type="image/png" href="foodbridge_logo.png">
+    <link rel="stylesheet" href="style_nearby_donation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="foodbridge_logo.png">
+        <nav class="navigation">
+            <ul class="nav_links">
+                <li class="home"><a href="index.html">Home</a></li>
+                <li class="about_us"><a href="about_us.html" >About Us</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="nearby_donation.html">Nearby Donations</a></li>
+                <li><a href="contact_us.html">Contact Us </a></li>
+               
+
+            </ul>
+        </nav>
+      
+
+    </header>
+    <div class="hero_section">
+        <div class="search-bar">
+            <input type="text" placeholder="Search by location..." id="searchInput" onkeyup="searchDonations()">
+        </div>
+    
+        <div class="table-container">
+            <table id="donationTable">
+                <thead>
+                    <tr>
+                        <th>Donor Name</th>
+                        <th>Location</th>
+                        <th>Food Details</th>
+                        <th>Contact No</th>
+                    </tr>
+                </thead>
+                <tbody id="donationBody">
+                    <!-- Donation rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>Foodbridge</h2>
+            <p>Bridging the gap between excess and need. Your small contribution can make a big difference.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2025 Foodbridge. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+<script src="nearby_donation.js"></script>
+</html>
