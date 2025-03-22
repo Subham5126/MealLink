@@ -44,6 +44,16 @@ const db = mysql.createConnection({
     database: 'foodbridge'
 });
 ```
+## Setup_db
+Edit the database configuration in `setup_db.js` as per your MySQL credentials:
+
+```js
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'your_password',
+    database: 'foodbridge'
+});
 
 ## Running the Application
 
