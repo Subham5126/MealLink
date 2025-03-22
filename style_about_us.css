@@ -150,3 +150,32 @@ img{
 }
 
 
+
+
+.container {
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white */
+    backdrop-filter: blur(2px); 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 2;
+    line-height: 1.6;
+    font-size: 18px;
+
+}
+h1, h2, h3 {
+    color: #f6f1f1;
+    text-align: center;
+}
+p {
+    line-height: 1.6;
+    color: #f4f1f1;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+.footer p {
+    text-align: center;
+}
