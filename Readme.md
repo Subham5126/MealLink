@@ -54,6 +54,7 @@ const db = mysql.createConnection({
     password: 'your_password',
     database: 'foodbridge'
 });
+```
 
 ## Running the Application
 
