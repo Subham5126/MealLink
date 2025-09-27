@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+li, a, button{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+   
+
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: center;
+    padding:30px 10%;
+    height: 130px;
+    background-color: #24252a;
+
+
+}
+.nav_links li{
+    display: inline-block;
+    
+    
+    padding: 0px 40px;
+
+}
+.nav_links {
+    list-style: none;
+    
+
+}
+.nav_links a{
+    position: relative;
+    border-bottom: none;
+    transition: all 0.3s ease 0s;
+    
+}
+.nav_links a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #38B6FF;
+    transition: width 0.3s ease;
+}
+
+.nav_links li a:hover::after {
+    width: 100%;  /* Expand to full width */
+}
+.nav_links li a:hover{
+    color: #38B6FF;
+
+
+}
+
+.nav_links li a:not(:hover)::after {
+    width: 0;  /* Retract to the right */
+    transition: width 0.3s ease;  /* Smooth transition */
+}
+
+
+
+button{
+    padding: 9px 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: #38B6FF;
+    transition: all 0.2s ease 0s;
+    
+}
+button:hover{
+    background-color: #0972af;
+    cursor: pointer;
+}
+
+img{
+    height:135px;
+}
+
+
+.hero_section{
+    background-image: url(homeless_man.jpg);
+    height: 900px;
+    width: 1513px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.hero_section::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity as needed */
+    z-index: 1;
+}
+.footer {
+    background-color: #24252a;
+    padding: 10px 0;
+    color: #edf0f1;
+    text-align: center;
+}
+
+.footer-content h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #38B6FF;
+}
+
+.footer-content p {
+    font-size: 16px;
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    color: #38B6FF;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #0972af;
+    transform: scale(1.1);
+}
+
+.footer-content p:last-child {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #999;
+}
+.contact-details {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.contact-details h2, .contact-details h3 {
+    color: #f6f1f1;
+    margin-bottom: 20px;
+}
+
+.contact-details p {
+    color: #f4f1f1;
+    margin: 10px 0 20px;
+   
+}
+
+.contact-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.contact-details li {
+    font-size: 18px;
+    color: #f4f1f1;
+    margin: 10px 0;
+}
+
+.contact-details li i {
+    margin-right: 8px;
+    color: #38B6FF;
+}
+
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    color: #38B6FF;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #0972af;
+    transform: scale(1.1);
+}
+
+.container{
+    position: relative;
+    z-index: 2;
+}
+.container p{
+    color: #f4f1f1;
+    text-align: center;
+}
+h1, h2 {
+    color: #f6f1f1;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.contact-details{
+    position: relative;
+    z-index: 2;
+
+}

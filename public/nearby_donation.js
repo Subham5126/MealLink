@@ -11,6 +11,7 @@ function fetchDonations() {
                     <td>${donation.location}</td>
                     <td>${donation.food_details}</td>
                     <td>${donation.donor_phone}</td>
+                    <td>${new Date(donation.created_at).toLocaleString()}</td>
                 `;
                 tbody.appendChild(row);
             });
@@ -23,11 +24,7 @@ function searchDonations() {
     const rows = document.querySelectorAll('#donationTable tbody tr');
     rows.forEach(row => {
         const location = row.cells[1].textContent.toLowerCase();
-        if (location.includes(input)) {
-            row.style.display = '';
-        } else {
-            row.style.display = 'none';
-        }
+        row.style.display = location.includes(input) ? '' : 'none';
     });
 }
 

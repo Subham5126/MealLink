@@ -1,6 +1,6 @@
-# Foodbridge
+# MealLink
 
-Foodbridge is a platform that connects people with excess food to orphanages and NGOs in need. Donors can easily share their surplus food, and recipients can find nearby donations. The goal is to reduce food wastage and help feed those in need.
+MealLink is a platform that connects people with excess food to orphanages and NGOs in need. Donors can easily share their surplus food, and recipients can find nearby donations. The goal is to reduce food wastage and help feed those in need.
 
 ## Features
 
@@ -18,8 +18,8 @@ Foodbridge is a platform that connects people with excess food to orphanages and
 
 1. Clone the repository:
    ```bash
-   https://github.com/Tanmay-coderr/foodbridge.git
-   cd foodbridge
+   https://github.com/Tanmay-coderr/MealLink.git
+   cd MealLink
    ```
 2. Install the required packages from the project directory:
    ```bash
@@ -41,7 +41,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'your_password',
-    database: 'foodbridge'
+    database: 'MealLink'
 });
 ```
 ## Setup_db
@@ -52,7 +52,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'your_password',
-    database: 'foodbridge'
+    database: 'MealLink'
 });
 ```
 

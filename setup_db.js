@@ -3,9 +3,8 @@ const mysql = require('mysql');
 // MySQL Connection
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'root',     // Replace with your MySQL username
-    password: 'your_password', //add your own password
-
+    user: 'root',
+    password: 'Subhamnphad#6',
 });
 
 // Connect to MySQL
@@ -14,14 +13,14 @@ db.connect((err) => {
     console.log('Connected to MySQL');
 
     // Create Database
-    db.query('CREATE DATABASE IF NOT EXISTS foodbridge', (err) => {
+    db.query('CREATE DATABASE IF NOT EXISTS MealLink', (err) => {
         if (err) throw err;
         console.log('Database created or already exists');
 
         // Switch to the database
-        db.query('USE foodbridge', (err) => {
+        db.query('USE MealLink', (err) => {
             if (err) throw err;
-            console.log('Using foodbridge database');
+            console.log('Using MealLink database');
 
             // Create Donations Table
             const createTableQuery = `

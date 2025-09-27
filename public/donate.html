@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DONATE NOW!</title>
-    <link rel="icon" type="image/png" href="foodbridge_logo.png">
+    <link rel="icon" type="image/png" href="MealLink_logo.png">
     <link rel="stylesheet" href="donate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <img src="foodbridge_logo.png">
+        <img src="MealLink_logo.png">
         <nav class="navigation">
             <ul class="nav_links">
                 <li class="home"><a href="index.html">Home</a></li>
@@ -49,44 +49,17 @@
     </div>
     <footer class="footer">
         <div class="footer-content">
-            <h2>Foodbridge</h2>
+            <h2>MealLink</h2>
             <p>Bridging the gap between excess and need. Your small contribution can make a big difference.</p>
             <div class="social-icons">
-                <a href="https://www.instagram.com/foodbridge_official?igsh=ajRwZDJ1Nm5kcWV4"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/FoodBridge2110?t=-hmyJXJxOghshGRC8bplZQ&s=08"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/foodbridge_official?igsh=ajRwZDJ1Nm5kcWV4"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/meal_link/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/MealLink2110?t=-hmyJXJxOghshGRC8bplZQ&s=08"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/meal_link/"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.linkedin.com/in/food-bridge-2a0297358?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <p>&copy; 2025 Foodbridge. All rights reserved.</p>
+            <p>&copy; 2025 MealLink. All rights reserved.</p>
         </div>
     </footer>
 </body>
-<script>
-    document.querySelector('form').addEventListener('submit', async function(e) {
-        e.preventDefault();  // Prevent the form from submitting the traditional way
-        
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData.entries());
-
-        try {
-            const response = await fetch('/donate', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-
-            if (response.ok) {
-                alert('Donation added successfully!');
-                this.reset();  // Reset the form fields
-            } else {
-                alert('Failed to add donation. Please try again.');
-            }
-        } catch (error) {
-            alert('Error submitting donation: ' + error.message);
-        }
-    });
-</script>
 
 </html>
