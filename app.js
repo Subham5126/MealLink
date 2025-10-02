@@ -2,10 +2,11 @@ const express = require('express');
 const mysql = require('mysql');
 const session = require('express-session');
 const app = express();
-const PORT = 3000;
+
+const PORT = process.env.PORT || 3000;
 
 // In-memory OTP store
-const otpStore = new Map(); // { email: otp }
+const otpStore = new Map();
 
 // Middleware
 app.use(express.json());
@@ -18,16 +19,20 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// MySQL Connection
+// MySQL Connection using Railway env variables
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Subhamnphad#6',
-    database: 'MealLink'
+    host: process.env.MYSQLHOST,
+    user: process.env.MYSQLUSER,
+    password: process.env.MYSQLPASSWORD,
+    database: process.env.MYSQLDATABASE,
+    port: process.env.MYSQLPORT,
 });
 
 db.connect(err => {
-    if (err) throw err;
+    if (err) {
+        console.error('❌ DB connection failed:', err);
+        return;
+    }
     console.log('✅ Connected to MySQL');
 });
 
@@ -64,7 +69,7 @@ app.post('/login', (req, res) => {
         if (err) return res.status(500).send('Login error');
         if (results.length === 0) return res.status(401).send('Invalid email or password');
 
-        req.session.user = results[0]; // Store user in session
+        req.session.user = results[0];
         res.redirect('/otp');
     });
 });
@@ -148,5 +153,5 @@ app.get('/api/nearby_donations', (req, res) => {
 // Start Server
 // ----------------------------
 app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
+    console.log(`🚀 Server running on port ${PORT}`);
 });
