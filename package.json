@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tanmay-coderr/MealLink.git"
+    "url": "git+https://github.com/Subham5126/MealLink.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Tanmay-coderr/MealLink/issues"
+    "url": "https://github.com/Subham5126/MealLink/issues"
   },
-  "homepage": "https://github.com/Tanmay-coderr/MealLink#readme",
+  "homepage": "https://github.com/Subham5126/MealLink#readme",
   "description": "",
   "dependencies": {
     "dotenv": "^16.4.7",
